@@ -1,2 +1,2 @@
 # Computational Fabrication
-CSCI 7000
+CSCI 7000-025
