@@ -1,2 +1,2 @@
-# CSCI 7000
-Computational Fabrication
+# Computational Fabrication
+CSCI 7000
