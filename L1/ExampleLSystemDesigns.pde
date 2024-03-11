@@ -26,3 +26,20 @@ LSystem initSquare() {
   // Create and return the Lsystem
   return new LSystem(axiom, rules, moveDist, rotateAngle, scaleFactor);
 }
+
+LSystem LSystem1() {
+  // initialize turtle variables
+  float moveDist = 10;
+  float rotateAngle = 90;
+  float scaleFactor = 1;
+  
+  // The intial axiom / input string
+  String axiom = "F+F+F+F";
+  
+  // Create any production rules
+  HashMap<Character, String> rules = new HashMap<>();
+  rules.put('F', "F+F-F-FF+F+F-F");
+    
+  // Create and return the Lsystem
+  return new LSystem(axiom, rules, moveDist, rotateAngle, scaleFactor);
+}

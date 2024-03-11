@@ -78,16 +78,24 @@ class LSystem extends BaseLSystem {
         case 'F':
           t.forward(dist);
           break; // The "break" exits out of the switch statement and prevents the next cases from running
-         case '+':
-           // [TODO]: Implement operations for each l-system vocabulary
-           t.left(angle);
-           break;
-         case '-':
-           t.right(angle);
-           break;
-         default:
-           // Throw an error if we don't have a draw operation implemented 
-           throw new IllegalArgumentException("Missing a drawing operation case for character: " + c.toString());  
+        case 'B':
+          t.back(dist);
+        case '+':
+          // [TODO]: Implement operations for each l-system vocabulary
+          t.left(angle);
+          break;
+        case '-':
+         t.right(angle);
+          break;
+        case '[':
+          t.push();
+          break;
+        case ']':
+          t.pop();
+          break;
+        default:
+          // Throw an error if we don't have a draw operation implemented 
+          throw new IllegalArgumentException("Missing a drawing operation case for character: " + c.toString());  
       }
     }
   }
