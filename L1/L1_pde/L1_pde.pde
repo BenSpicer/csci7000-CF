@@ -1,4 +1,5 @@
 import Turtle.*;
+import processing.svg.*;
 
 Turtle t;
 float r; // radius
@@ -9,6 +10,7 @@ public enum SHAPES {
 
 void setup() {
   size(512,512);
+  background(255);
   t = new Turtle(this);
 
   r = 100;
@@ -19,8 +21,8 @@ void setup() {
 void draw() {
   //ellipse(width/2, height/2, 2*r, 2*r);
 
-  for (int i = 0; i < SHAPES.values().length; i += 1) { 
-    switch (SHAPES.values()[i]) {
+  //for (int i = 0; i < SHAPES.values().length; i += 1) { 
+    switch (SHAPES.values()[2]) {
       case TRIANGLE:
         nGon(3, r);
         break;
@@ -37,7 +39,7 @@ void draw() {
         drawT();
         break;
     }
-  }
+  //}
 }
 
 void drawI() {
@@ -82,3 +84,19 @@ void nGon(int num_sides, float radius) {
 
   popMatrix();
 }
+
+void keyPressed() {
+  switch (key) {
+    case 's':
+      // Export as SVG
+      //press the 's' key to save a svg of your drawing
+      if (key == 's') {
+        // Name of the output file is "lsystem-" with a date string 
+        String fileName = "output/Circ.svg";
+        beginRecord(SVG, fileName);
+        draw();
+        endRecord();
+        println("Saved to file: " + fileName);
+      }
+   }
+ }

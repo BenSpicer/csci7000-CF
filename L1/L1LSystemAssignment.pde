@@ -32,9 +32,9 @@ void setup() {
   // [TODO]: call your L-system designs methods below
   // to create your l-system
   //lSys = initSquare();
-  //lSys = sys1();
+  lSys = sys1();
   //lSys = sys2();
-  lSys = sys3();
+  //lSys = sys3();
   
   // Don't loop the draw function
   noLoop();
